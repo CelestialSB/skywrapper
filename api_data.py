@@ -5,7 +5,7 @@ from constants.bot_config import API_KEY
 from utils.errors import InvalidIGN, SkyblockAPIError
 from utils.helpers import get_json
 
-logger = logging.getLogger('api')
+logger = logging.getLogger("api")
 
 
 # Get Mojang Data
@@ -20,13 +20,13 @@ async def get_mojang_data(name: str = None, uuid: str = None):
     """
     try:
         if name is not None:
-            logger.info(f'GET https://api.mojang.com/users/profiles/minecraft/{name}')
-            mojang_data = await get_json(f'https://api.mojang.com/users/profiles/minecraft/{name}')
-            return mojang_data['id'], mojang_data['name']
+            logger.info(f"GET https://api.mojang.com/users/profiles/minecraft/{name}")
+            mojang_data = await get_json(f"https://api.mojang.com/users/profiles/minecraft/{name}")
+            return mojang_data["id"], mojang_data["name"]
         if uuid is not None:
-            logger.info(f'GET https://api.mojang.com/user/profiles/{uuid}/names')
-            mojang_data = await get_json(f'https://api.mojang.com/user/profiles/{uuid}/names')
-            return uuid, mojang_data[-1]['name']
+            logger.info(f"GET https://api.mojang.com/user/profiles/{uuid}/names")
+            mojang_data = await get_json(f"https://api.mojang.com/user/profiles/{uuid}/names")
+            return uuid, mojang_data[-1]["name"]
     # except:  # avoid using bare except
     except Exception as e:
         raise InvalidIGN(e)
@@ -42,8 +42,8 @@ async def get_skyblock_data(uuid: str):
     [Returns type: dict] Gets skyblock data
     """
     try:
-        logger.info(f'GET https://api.hypixel.net/skyblock/profiles?key=API_KEY&uuid={uuid}')
-        skyblock_data = await get_json(f'https://api.hypixel.net/skyblock/profiles?key={API_KEY}&uuid={uuid}')
+        logger.info(f"GET https://api.hypixel.net/skyblock/profiles?key=API_KEY&uuid={uuid}")
+        skyblock_data = await get_json(f"https://api.hypixel.net/skyblock/profiles?key={API_KEY}&uuid={uuid}")
         return skyblock_data
     except Exception as e:
         raise SkyblockAPIError(e)
@@ -57,11 +57,11 @@ async def get_hypixel_data(uuid: str) -> dict:
     :rtype: dict
     [Returns type: dict] Gets hypixel data
     """
-    logger.info(f'GET https://api.hypixel.net/player?key=API_KEY&uuid={uuid}')
-    hypixel_data = await get_json(f'https://api.hypixel.net/player?key={API_KEY}&uuid={uuid}')
+    logger.info(f"GET https://api.hypixel.net/player?key=API_KEY&uuid={uuid}")
+    hypixel_data = await get_json(f"https://api.hypixel.net/player?key={API_KEY}&uuid={uuid}")
 
-    if 'socialMedia' in hypixel_data['player'] and 'DISCORD' in hypixel_data['player']['socialMedia']['links']:
-        discord = hypixel_data['player']['socialMedia']['links']['DISCORD']  # .lower()
+    if "socialMedia" in hypixel_data["player"] and "DISCORD" in hypixel_data["player"]["socialMedia"]["links"]:
+        discord = hypixel_data["player"]["socialMedia"]["links"]["DISCORD"]  # .lower()
     else:
         discord = None
     return hypixel_data, discord
@@ -75,8 +75,8 @@ async def get_bazaar_data():
 
     [Returns type: dict] Gets bazaar data
     """
-    logger.info('GET https://sky.lea.moe/api/bazaar')
-    bazaar_data = await get_json('https://sky.lea.moe/api/bazaar')
+    logger.info("GET https://sky.lea.moe/api/bazaar")
+    bazaar_data = await get_json("https://sky.lea.moe/api/bazaar")
     return bazaar_data
 
 
@@ -89,8 +89,8 @@ async def get_auction_data(uuid: str):
 
     [Returns type: dict] Gets player auction data
     """
-    logger.info(f'GET https://api.hypixel.net/skyblock/auction?key=API_KEY&player={uuid}')
-    auction_data = await get_json(f'https://api.hypixel.net/skyblock/auction?key={API_KEY}&player={uuid}')
+    logger.info(f"GET https://api.hypixel.net/skyblock/auction?key=API_KEY&player={uuid}")
+    auction_data = await get_json(f"https://api.hypixel.net/skyblock/auction?key={API_KEY}&player={uuid}")
     return auction_data
 
 
@@ -105,12 +105,12 @@ async def get_leaderboard_data(leaderboard_id, page=1, name=None):
     :rtype: dict
     """
     if name is None:
-        logger.info(f'GET https://sky.lea.moe/api/v2/leaderboard/{leaderboard_id}?page={page}')
-        leaderboard_data = await get_json(f'https://sky.lea.moe/api/v2/leaderboard/{leaderboard_id}?page={page}')
+        logger.info(f"GET https://sky.lea.moe/api/v2/leaderboard/{leaderboard_id}?page={page}")
+        leaderboard_data = await get_json(f"https://sky.lea.moe/api/v2/leaderboard/{leaderboard_id}?page={page}")
     else:
-        logger.info(f'GET https://sky.lea.moe/api/v2/leaderboard/{leaderboard_id}?find={name}')
+        logger.info(f"GET https://sky.lea.moe/api/v2/leaderboard/{leaderboard_id}?find={name}")
         try:
-            leaderboard_data = await get_json(f'https://sky.lea.moe/api/v2/leaderboard/{leaderboard_id}?find={name}')
+            leaderboard_data = await get_json(f"https://sky.lea.moe/api/v2/leaderboard/{leaderboard_id}?find={name}")
         except Exception as e:
             raise InvalidIGN(e)
     return leaderboard_data
