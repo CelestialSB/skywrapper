@@ -1,0 +1,10 @@
+twine
+furo
+sphinx
+build
+wheel
+pytest
+
+# sphinx exts
+sphinx-autobuild
+sphinx-copybutton
