@@ -7,6 +7,8 @@ Hypixel Skyblock API wrapper smdaisonfbdf hd
 Other documents
 ----------------
 .. toctree::
+    :maxdepth: 1
+
     api/index.rst
 
 .. Keep this at the bottom
