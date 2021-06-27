@@ -8,3 +8,7 @@ pytest
 # sphinx exts
 sphinx-autobuild
 sphinx-copybutton
+
+# Extras
+## async
+aiohttp
