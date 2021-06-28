@@ -12,6 +12,7 @@ Exception hierarchy
 --------------------
 
 - :exc:`~.SkywrapperException`
+    - :exc:`~.InvalidType`
     - :exc:`~.HTTPException`
         - :exc:`~.MojangException`
         - :exc:`~.NotFoundException`
