@@ -1,3 +1,5 @@
+.. _skywrapper_exceptions:
+
 Exceptions
 ===========
 
@@ -10,5 +12,6 @@ Exception hierarchy
 --------------------
 
 - :exc:`~.SkywrapperException`
-    - :exc:`~.BaseMojangException`
     - :exc:`~.HTTPException`
+        - :exc:`~.MojangException`
+        - :exc:`~.NotFoundException`
