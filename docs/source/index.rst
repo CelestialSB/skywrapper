@@ -7,9 +7,10 @@ Hypixel Skyblock API wrapper smdaisonfbdf hd
 Other documents
 ----------------
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     api/index.rst
+    api/async/index.rst
 
 .. Keep this at the bottom
 .. toctree::
@@ -17,7 +18,7 @@ Other documents
     :hidden:
 
     GitHub Repo <https://github.com/CelestialSB/skywrapper>
-    PyPI Project (soon) </>
+    PyPI Project (soon) <https://example.com>
     TestPyPI Project <https://test.pypi.org/project/skywrapper>
 
 Indices and tables

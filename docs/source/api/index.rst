@@ -8,3 +8,5 @@ There are a few API used in this package, they will be documented separately.
     ./exceptions.rst
     ./skyblock.rst
     ./hypixel.rst
+    ./mojang.rst
+    ./internal

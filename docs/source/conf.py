@@ -71,4 +71,5 @@ extlinks = {
 intersphinx_mapping = {
   'py': ('https://docs.python.org/3', None),
   'aiohttp': ('https://docs.aiohttp.org/en/stable/', None),
+  'requests': ('https://docs.python-requests.org/en/stable/', None),
 }
