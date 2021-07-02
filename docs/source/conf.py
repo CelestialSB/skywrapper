@@ -34,6 +34,7 @@ extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.viewcode',
     'sphinx.ext.autosectionlabel',
+    'sphinx.ext.extlinks',
     # 'sphinx.ext.napoleon',
     # 'sphinx.ext.autosummary',
     'sphinx_copybutton'
@@ -54,6 +55,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'furo'
+html_show_sphinx = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -61,6 +63,8 @@ html_theme = 'furo'
 html_static_path = ['_static']
 
 # autosummary_generate = True
+autodoc_member_order = 'bysource'
+autodoc_typehints = 'description'
 autosectionlabel_prefix_document = True
 
 extlinks = {
