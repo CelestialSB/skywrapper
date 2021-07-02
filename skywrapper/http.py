@@ -16,11 +16,13 @@
 
 import sys
 from typing import Union
+from json import JSONDecodeError
 # from enum import Enum
 
 import requests
 
 from . import __version__
+from .exceptions import NotFoundException, UnauthorizedException, HTTPException
 
 
 class MojangRoute:
@@ -116,5 +118,19 @@ class HTTPClient:
         kwargs['headers'] = headers
         result = requests.request(route.method, route.url, **kwargs)
 
-        # TODO: add status code checks and throw exceptions when necessary
+        try:
+            result.raise_for_status()
+        except requests.HTTPError:
+            # TODO: I am going to drop 3.6-3.9 support when switch cases ships
+            try:
+                result_body = result.json()
+            except JSONDecodeError:
+                result_body = result.text
+            if result.status_code == 404:
+                raise NotFoundException(result, result.status_code, result_body)
+            elif result.status_code == 403:
+                raise UnauthorizedException(result, result.status_code, result_body)
+            else:
+                raise HTTPException(result, result.status_code, result_body)
+
         return result
