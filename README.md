@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/skywrapper/badge/?version=latest)](https://skywrapper.readthedocs.io/en/latest/?badge=latest)
+
 # Skywrapper
 
 Python wrapper for the Hypixel Skyblock API

@@ -1,4 +1,7 @@
 .. skywrapper
+.. image:: https://readthedocs.org/projects/skywrapper/badge/?version=latest
+    :target: https://skywrapper.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 Welcome to skywrapper's documentation
 ======================================
