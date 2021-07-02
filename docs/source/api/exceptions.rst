@@ -16,3 +16,4 @@ Exception hierarchy
     - :exc:`~.HTTPException`
         - :exc:`~.MojangException`
         - :exc:`~.NotFoundException`
+        - :exc:`~.UnauthorizedException`
