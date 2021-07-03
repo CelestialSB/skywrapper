@@ -1,11 +1,16 @@
 .. skywrapper
-.. image:: https://readthedocs.org/projects/skywrapper/badge/?version=latest
-    :target: https://skywrapper.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
 
 Welcome to skywrapper's documentation
 ======================================
 Hypixel Skyblock API wrapper smdaisonfbdf hd
+
+.. image:: https://readthedocs.org/projects/skywrapper/badge/?version=latest
+    :target: https://skywrapper.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. image:: https://github.com/CelestialSB/skywrapper/actions/workflows/codeql-analysis.yml/badge.svg
+    :target: https://github.com/kcomain/CelestialSB/skywrapper/workflows/codeql-analysis.yml
+    :alt: CodeQL
 
 Other documents
 ----------------

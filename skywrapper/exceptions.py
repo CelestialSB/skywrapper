@@ -37,6 +37,8 @@ class HTTPException(SkywrapperException):
 
     You should catch more specific errors instead of catching this one when suitable.
 
+    Subclass of :exc:`SkywrapperException`
+
     :ivar response: :class:`requests.Response` or :class:`aiohttp.ClientResponse`
     :ivar status_code: HTTP Status code
     :ivar response_message: The response body returned

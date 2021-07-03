@@ -21,7 +21,6 @@ project = 'skywrapper'
 copyright = '2021, kcomain, seazyns and contributors'
 author = 'kcomain, seazyns'
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
